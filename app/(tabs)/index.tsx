@@ -1,17 +1,17 @@
+import { router } from 'expo-router';
 import React, { useState } from 'react';
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Image,
-  Dimensions,
-  SafeAreaView,
   ActivityIndicator,
-  Alert
+  Alert,
+  Dimensions,
+  Image,
+  SafeAreaView,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View
 } from 'react-native';
-import { router } from 'expo-router';
 import { Header } from '../../components/Header';
 
 const { width, height } = Dimensions.get('window');
@@ -184,8 +184,11 @@ const styles = StyleSheet.create({
   cardWrapper: {
     width: width,
     paddingHorizontal: 20,
+    paddingTop: height * 0.07,
+    alignItems: 'center',
   },
   card: {
+    width: width * 0.9,
     backgroundColor: '#1e293b',
     borderRadius: 15,
     overflow: 'hidden',
@@ -197,7 +200,7 @@ const styles = StyleSheet.create({
   },
   cardImage: {
     width: '100%',
-    height: height * 0.5,
+    height: height * 0.4,
   },
   cardContent: {
     padding: 20,
