@@ -1,14 +1,18 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, SafeAreaView, StyleSheet, Text, View } from 'react-native';
+
+const { width } = Dimensions.get('window');
 
 export const Header = () => {
   return (
-    <View style={styles.header}>
-      <Text style={styles.headerTitle}>NASA</Text>
-      <View style={styles.logoContainer}>
-        <Image source={require('../assets/images/nasa-logo.png')} style={styles.logo} />
+    <SafeAreaView>
+      <View style={styles.header}>
+        <Text style={styles.headerTitle}>NASA</Text>
+        <View style={styles.logoContainer}>
+          <Image source={require('../assets/images/nasa-logo.png')} style={styles.logo} />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
@@ -17,35 +21,37 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    paddingHorizontal: 20,
-    paddingVertical: 15,
+    paddingHorizontal: width * 0.05,
+    paddingVertical: width * 0.03,
     backgroundColor: '#1e293b',
     borderBottomWidth: 1,
     borderBottomColor: '#334155',
   },
   headerTitle: {
-    fontSize: 24,
+    fontSize: width * 0.06,
     fontWeight: 'bold',
     color: '#ffffff',
   },
   logoContainer: {
-    width: 40,
-    height: 40,
+    width: width * 0.1,
+    height: width * 0.1,
   },
   logoPlaceholder: {
-    width: 40,
-    height: 40,
+    width: '100%',
+    height: '100%',
     backgroundColor: '#3b82f6',
-    borderRadius: 20,
+    borderRadius: 100,
     justifyContent: 'center',
     alignItems: 'center',
   },
   logoText: {
-    fontSize: 20,
+    fontSize: width * 0.05,
+    color: '#ffffff',
+    fontWeight: 'bold',
   },
   logo: {
-    width: 40,
-    height: 40,
+    width: '100%',
+    height: '100%',
     resizeMode: 'contain',
   },
 });
